@@ -9,7 +9,9 @@ module.exports = function main (options, cb) {
   const ready = cb || function () {}
   const opts = Object.assign({
     // Default options
+     
   }, options)
+  opts.port = 8001
 
   const logger = pino()
 
