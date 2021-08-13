@@ -13,7 +13,7 @@ module.exports = function (app, opts) {
   app.get("/", simple);
   app.get("/configured", configured(opts));
 
-  app.post("/log.txt", jsonParser, (req, res) => {
+  app.post("/log.json", jsonParser, (req, res) => {
     const { name = `log at ${new Date().toUTCString()}`, content } = req.body;
     let filepath = `${logPath}/${name}.json`;
     let n = 1;
